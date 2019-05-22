@@ -66,7 +66,7 @@ Dva：基于 redux、redux-saga 和 react-router 的轻量级前端框架
 	npm install
 	npm start
 
-启动完成后会自动打开浏览器访问 http://localhost:8000就代表成功了。
+启动完成后会自动打开浏览器访问 *http://localhost:8000* 就代表成功了。
 
 
 接下来就可以修改代码进行业务开发了，框架内建了典型业务模板、常用业务组件、模拟数据、实时预览、状态管理、国际化、全局路由等，相关使用说明请查看官方文档
@@ -103,26 +103,64 @@ Dva：基于 redux、redux-saga 和 react-router 的轻量级前端框架
 
 ## React 与 Vue 差异
 ### Css作用域
-- vue 通过在style上添加 scoped 属性来实现  
-- react 通过css module 实现
+- Vue 通过在style上添加 scoped 属性来实现  
+- React 通过CSS Modules 实现
 
 ### 双向绑定
-- vue 双向数据流  
-- react 单项数据流
+- Vue 双向数据流  
+- React 单项数据流
 
 ### 路由
-- vue 静态路由
-- react 动态路由
+- Vue 静态路由（初始化之前提前配置好）
+- React 动态路由（运行中创建的路由）
 
 ### 组件格式
-- vue 单文件组件 template、script、style
-- react jsx
+Vue 组件
 
+    <template>
+		<div class="box">{{msg}}</div>
+	</template>
 
+	<script>
+		export default {
+  			data() {
+    			return {
+					msg:"我是一个Vue组件"
+				}
+			}
+		}
+	</script>	
 
+	<style lang="scss" scoped>
+		.box{
+			color:red;
+		}
+	</style>
+
+React 组件
+
+	import React, { Component } from 'react';
+	import styles from './styles.less';
+	
+	class List extends PureComponent {
+		state = {
+		   msg:"我是一个React组件"
+		}
+
+		render() {
+			return (<div>{this.state.msg}</div>)
+		}
+	}
+
+生命周期对应  
+
+- componentWillUnmount == beforeDestroy 在卸载和销毁组件之前立即调用
+- componentDidMount == mounted 组件插入DOM后立即调用
+- componentDidUpdate == updated 组件更新后立即调用
 
 ## 相关链接：   
 React中文文档：[https://zh-hans.reactjs.org](https://zh-hans.reactjs.org)   
+React 生命周期：[http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/](http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)  
 React Router：[https://reacttraining.com/react-router/web/guides/quick-start](https://reacttraining.com/react-router/web/guides/quick-start)  
 Redux：[https://redux.js.org/](https://redux.js.org/)  
 Redux-saga：[https://redux-saga.js.org](https://redux-saga.js.org/)  
