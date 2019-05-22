@@ -111,8 +111,8 @@ Dva：基于 redux、redux-saga 和 react-router 的轻量级前端框架
 - React 单项数据流
 
 ### 路由
-- Vue 静态路由（初始化之前提前配置好）
-- React 动态路由（运行中创建的路由）
+- Vue [静态路由](https://router.vuejs.org/zh/)（初始化之前提前配置好）
+- React [动态路由](https://reacttraining.com/react-router/web/example/recursive-paths)（运行中创建的路由）
 
 ### 组件格式
 Vue 组件
